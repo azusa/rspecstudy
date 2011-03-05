@@ -16,3 +16,9 @@ describe MessageFilter ,'with argument "foo"' do
 	}	
 end
 
+describe MessageFilter, 'with argument "foo","bar"' do
+	subject { MessageFilter.new('foo','bar')}
+	it {should be_detect('hello from bar')}
+end
+
+
