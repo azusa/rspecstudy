@@ -3,18 +3,18 @@ require 'rspec'
 require './message_filter'
 
 
-describe MessageFilter do
+describe MessageFilter ,'with argument "foo"' do
 
 	before do
 		@filter = MessageFilter.new('foo')
 	end
 
-	it 'shold detect message with NG word' do
+	it { 
 		@filter.should be_detect('hello from foo')
-	end
+	}	
 
-	it 'shold not detect message without NG word' do
+	it{ 
 		@filter.should_not be_detect('hello. world')
-	end
+	}	
 end
 
