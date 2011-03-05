@@ -5,18 +5,16 @@ require './message_filter'
 
 describe MessageFilter do
 
-	before(:each)do
+	before do
 		@filter = MessageFilter.new('foo')
 	end
 
-
-
 	it 'shold detect message with NG word' do
-		@filter.detect?('hello from foo').should ==true
+		@filter.should be_detect('hello from foo')
 	end
 
 	it 'shold not detect message without NG word' do
-		@filter.detect?('hello. world').should == false
+		@filter.should_not be_detect('hello. world')
 	end
 end
 
